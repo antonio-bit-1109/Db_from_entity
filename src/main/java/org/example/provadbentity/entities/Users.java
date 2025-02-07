@@ -1,11 +1,7 @@
 package org.example.provadbentity.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-import java.sql.Timestamp;
 
 @Entity
 public class Users {
@@ -14,11 +10,18 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Column(nullable = false , length = 100)
+    private String nome;
+
+    @Column(nullable = false , length = 100)
+    private String cognome;
+
+    @Column(nullable = false , length = 100)
     private String email;
-    private String password;
-    private String phone;
-    private String role;
+
+    @Column(nullable = false , length = 100)
+    private String telefono;
+
 
 
     public Long getId() {
@@ -29,12 +32,20 @@ public class Users {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
     }
 
     public String getEmail() {
@@ -45,28 +56,12 @@ public class Users {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
 

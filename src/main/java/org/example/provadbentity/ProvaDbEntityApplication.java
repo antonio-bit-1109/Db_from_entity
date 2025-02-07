@@ -9,5 +9,4 @@ public class ProvaDbEntityApplication {
     public static void main(String[] args) {
         SpringApplication.run(ProvaDbEntityApplication.class, args);
     }
-
 }
